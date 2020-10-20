@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gilded-rose-app
+    env_file:
+        - .env.development
+    volumes: 
+      - ".:/app"
+    ports:
+      - "3001:3000"
+    tty: true
