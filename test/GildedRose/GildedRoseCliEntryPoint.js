@@ -1,5 +1,5 @@
-const Item = require('../src/GildedRose/Item');
-const GildedRose = require('../src/GildedRose/GildedRose');
+const Item = require('../../src/GildedRose/Item');
+const GildedRose = require('../../src/GildedRose/GildedRose');
 class GildedRoseCliEntryPoint {
     main() {
         console.log('OMGAI!');
