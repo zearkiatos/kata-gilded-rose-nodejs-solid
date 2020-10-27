@@ -19,6 +19,8 @@ class GildedRose {
 
   MIN_QUALITY = 0;
 
+  items = [];
+
   constructor(items) {
     this.items = items;
   }
@@ -27,9 +29,45 @@ class GildedRose {
     for (let item in this.items) {
       switch (item.name) {
         case this.AGED_BRIE:
-        break;
+          this.decreaseSellIn(item);
+          break;
+        case this.BACKSTAGE_PASSES:
+          this.decreaseQuality();
+          break;
+        case this.SULFURUS:
+          break;
+        default:
+          break;
       }
     }
+  }
+
+  decreaseSellIn(item) {
+    item.sellIn -= 1;
+  }
+
+  decreaseQuality(item) {
+    item.quality -= 1;
+  }
+
+  increaseQuality(item) {
+    item.quality += 1;
+  }
+
+  resetQuality(item) {
+    item.quality = 0;
+  }
+
+  updateBackstagePassesQuality(item) {
+    if (item.quality < MAX_QUALITY) {
+      this.increaseQuality(item);
+      this.increaseQuality(item);
+    }
+
+    if(item.sellIn < this.BACKSTAGE_PASSES_DOUBLE_QUALITY_INCREASE_SELL_IN_THRESHOLD) {
+      this.increaseQuality(item);
+    }
+    
   }
 
   updateQuality() {
