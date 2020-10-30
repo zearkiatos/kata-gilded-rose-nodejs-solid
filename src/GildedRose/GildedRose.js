@@ -1,27 +1,31 @@
 class GildedRose {
-  AGED_BRIE = 'Aged Brie';
 
-  BACKSTAGE_PASSES = 'Backstage passes to a TAFKAL80ETC concert';
+  initialization() {
+    this.AGED_BRIE = 'Aged Brie';
 
-  SULFURUS = 'Sulfuras, Hand of Ragnaros';
-
-  AGED_BRIE_DOUBLE_QUALITY_DECREMENT_SELL_IN_THRESHOLD = 0;
-
-  BACKSTAGE_PASSES_DOUBLE_QUALITY_INCREASE_SELL_IN_THRESHOLD = 10;
-
-  BACKSTAGE_PASSES_TRIPLE_QUALITY_INCREASE_SELL_IN_THRESHOLD = 5;
-
-  BACKSTAGE_PASSES_QUALITY_RESET_SELL_IN_THRESHOLD = 0;
-
-  DEFAULT_ITEM_DOUBLE_QUALITY_DECREASE_SELL_IN_THRESHOLD = 0;
-
-  MAX_QUALITY = 50;
-
-  MIN_QUALITY = 0;
-
-  items = [];
+    this.BACKSTAGE_PASSES = 'Backstage passes to a TAFKAL80ETC concert';
+  
+    this.SULFURUS = 'Sulfuras, Hand of Ragnaros';
+  
+    this.AGED_BRIE_DOUBLE_QUALITY_DECREMENT_SELL_IN_THRESHOLD = 0;
+  
+    this.BACKSTAGE_PASSES_DOUBLE_QUALITY_INCREASE_SELL_IN_THRESHOLD = 10;
+  
+    this.BACKSTAGE_PASSES_TRIPLE_QUALITY_INCREASE_SELL_IN_THRESHOLD = 5;
+  
+    this.BACKSTAGE_PASSES_QUALITY_RESET_SELL_IN_THRESHOLD = 0;
+  
+    this.DEFAULT_ITEM_DOUBLE_QUALITY_DECREASE_SELL_IN_THRESHOLD = 0;
+  
+    this.MAX_QUALITY = 50;
+  
+    this.MIN_QUALITY = 0;
+  
+    this.items = [];
+  }
 
   constructor(items) {
+    this.initialization();
     this.items = items;
   }
 
