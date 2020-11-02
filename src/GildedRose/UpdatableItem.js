@@ -1,5 +1,4 @@
 const Item = require('./Item');
-
 class UpdatableItem extends Item {
   initialization() {
     this.MAX_QUALITY = 50;
@@ -8,9 +7,19 @@ class UpdatableItem extends Item {
   }
 
   constructor(item) {
+        
     super(item.name, item.sellIn, item.quality);
+
+    if(this.constructor == UpdatableItem) {
+      throw new Error("Object of Abstract Class cannot be created");
+    }
+
     this.initialization();
     this.item = item;
+  }
+
+  update() {
+    throw new Error("Abstract Method has no implementation");
   }
 
   sellIn() {
