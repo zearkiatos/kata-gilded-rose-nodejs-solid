@@ -7,6 +7,7 @@ class AgedBrie extends UpdatableItem {
 
     constructor(item) {
         super(item);
+        this.initialization();
     }
 
     update() {
