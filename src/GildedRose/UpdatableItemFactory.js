@@ -9,7 +9,7 @@ class UpdatableItemFactory {
         this.BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert";
         this.SULFURAS = "Sulfuras, Hand of Ragnaros";
     }
-    constructor(item) {
+    static constructor(item) {
         this.initialization();
         switch(item.name) {
             case this.AGED_BRIE:
@@ -21,6 +21,10 @@ class UpdatableItemFactory {
             default:
                 return new StandardItem(item);
         }
+    }
+
+    static basedOn(items) {
+        return items
     }
 
 

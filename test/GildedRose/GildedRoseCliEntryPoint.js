@@ -1,7 +1,8 @@
 const Item = require('../../src/GildedRose/Item');
 const GildedRose = require('../../src/GildedRose/GildedRose');
+const UpdatableItemFactory = require('../../src/GildedRose/UpdatableItemFactory');
 class GildedRoseCliEntryPoint {
-    main() {
+    main(args) {
         console.log('OMGAI!');
         const items = [
             new Item("+5 Dexterity Vest", 10, 20),
@@ -15,9 +16,14 @@ class GildedRoseCliEntryPoint {
             new Item("Conjured Mana Cake", 3, 6)
         ];
 
+        const updatableItems = UpdatableItemFactory.basedOn(items)
+
         const app = new GildedRose(items);
 
-        const days = 2;
+        let days = 2;
+        if (args.length > 0) {
+            days = parseInt(args[0]) + 1;
+        }
 
         for(let i = 0; i< days; i++) {
             console.log(`-------- day ${i} --------`);
@@ -26,7 +32,7 @@ class GildedRoseCliEntryPoint {
                 console.log(item);
             }
             console.log();
-            app.updateQuality();
+            app.updateQuality(updatableItems);
         }
     }
 }
