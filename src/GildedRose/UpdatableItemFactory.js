@@ -24,7 +24,7 @@ class UpdatableItemFactory {
     }
 
     static basedOn(items) {
-        return items
+        return items.map(item => UpdatableItemFactory(item))
     }
 
 

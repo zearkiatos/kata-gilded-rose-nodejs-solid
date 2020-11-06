@@ -1,16 +1,21 @@
 /* eslint-disable no-undef */
 const Item = require('../../src/GildedRose/Item');
 const GildedRose = require('../../src/GildedRose/GildedRose');
+const UpdatableItemFactory = require('../../src/GildedRose/UpdatableItemFactory');
+
 describe('Test suite for GildedRose', () => {
 
-    const arrayWith = (item) => {
-        return [item]
+    const listOf = (item) => {
+        const updatableItem = []
+        updatableItem.push(item)
+        return updatableItem
     }
     test('Should test that sell in value is decreased', () => {
         const whateverItem = new Item('whatever', 10, 0);
+        const updatableItem = UpdatableItemFactory.basedOn(whateverItem);
 
-        const gildedRose = new GildedRose(arrayWith(whateverItem));
-        gildedRose.updateQuality();
+        const gildedRose = new GildedRose();
+        gildedRose.updateQuality(listOf(updatableItem));
 
         expect(whateverItem.sellIn).toBe(9);
     });
