@@ -4,13 +4,14 @@ const StandardItem = require("./StandardItem");
 const Sulfuras = require("./Sulfuras");
 
 class UpdatableItemFactory {
-    initialization() {
+    static initialization() {
         this.AGED_BRIE = "Aged Brie";
         this.BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert";
         this.SULFURAS = "Sulfuras, Hand of Ragnaros";
     }
     static constructor(item) {
-        this.initialization();
+        
+        initialization();
         switch(item.name) {
             case this.AGED_BRIE:
                 return new AgedBrie(item);
@@ -22,12 +23,6 @@ class UpdatableItemFactory {
                 return new StandardItem(item);
         }
     }
-
-    static basedOn(items) {
-        return items.map(item => UpdatableItemFactory(item))
-    }
-
-
 }
 
 module.exports = UpdatableItemFactory;

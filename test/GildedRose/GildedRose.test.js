@@ -12,7 +12,7 @@ describe('Test suite for GildedRose', () => {
     }
     test('Should test that sell in value is decreased', () => {
         const whateverItem = new Item('whatever', 10, 0);
-        const updatableItem = UpdatableItemFactory.basedOn(whateverItem);
+        const updatableItem = UpdatableItemFactory(whateverItem);
 
         const gildedRose = new GildedRose();
         gildedRose.updateQuality(listOf(updatableItem));

@@ -1,7 +1,7 @@
 
 class GildedRose {
     updateQuality(items) {
-      items.forEach(item => item.update)
+      items.forEach(item => item.update())
     }
 }
 
