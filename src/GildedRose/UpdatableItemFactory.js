@@ -1,7 +1,7 @@
-const AgedBrie = require("./AgedBrie");
-const BackstagePasses = require("./BackagePasses");
-const StandardItem = require("./StandardItem");
-const Sulfuras = require("./Sulfuras");
+import AgedBrie from "./AgedBrie";
+import BackstagePasses from "./BackagePasses";
+import StandardItem from "./StandardItem";
+import Sulfuras from "./Sulfuras";
 
 class UpdatableItemFactory {
     static initialization() {
@@ -11,7 +11,7 @@ class UpdatableItemFactory {
     }
     static constructor(item) {
         
-        initialization();
+        this.initialization();
         switch(item.name) {
             case this.AGED_BRIE:
                 return new AgedBrie(item);
@@ -25,4 +25,4 @@ class UpdatableItemFactory {
     }
 }
 
-module.exports = UpdatableItemFactory;
+export default UpdatableItemFactory;

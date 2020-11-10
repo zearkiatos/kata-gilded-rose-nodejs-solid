@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
-const Item = require('../../src/GildedRose/Item');
+import Item from '../../src/GildedRose/Item';
+import GildedRose from '../../src/GildedRose/GildedRose';
 const GildedRose = require('../../src/GildedRose/GildedRose');
 const UpdatableItemFactory = require('../../src/GildedRose/UpdatableItemFactory');
 

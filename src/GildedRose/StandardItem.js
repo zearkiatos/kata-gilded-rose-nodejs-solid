@@ -1,4 +1,4 @@
-const UpdatableItem = require("./UpdatableItem");
+import UpdatableItem from "./UpdatableItem";
 
 class StandardItem extends UpdatableItem {
     initialization() {
@@ -20,4 +20,4 @@ class StandardItem extends UpdatableItem {
     }
 }
 
-module.exports = StandardItem;
+export default StandardItem;

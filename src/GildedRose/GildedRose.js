@@ -5,4 +5,4 @@ class GildedRose {
     }
 }
 
-module.exports = GildedRose;
+export default GildedRose;

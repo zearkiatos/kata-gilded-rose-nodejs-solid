@@ -1,4 +1,4 @@
-const Item = require('./Item');
+import Item from './Item';
 class UpdatableItem extends Item {
   initialization() {
     this.MAX_QUALITY = 50;
@@ -47,4 +47,4 @@ class UpdatableItem extends Item {
   }
 }
 
-module.exports = UpdatableItem;
+export default UpdatableItem;

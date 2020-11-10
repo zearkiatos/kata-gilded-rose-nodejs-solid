@@ -1,4 +1,4 @@
-const UpdatableItem = require("./UpdatableItem");
+import UpdatableItem from "./UpdatableItem";
 
 class AgedBrie extends UpdatableItem {
     initialization() {
@@ -22,4 +22,4 @@ class AgedBrie extends UpdatableItem {
     }
 }
 
-module.exports = AgedBrie;
+export default AgedBrie;

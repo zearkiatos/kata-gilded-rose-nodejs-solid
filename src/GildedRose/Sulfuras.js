@@ -1,4 +1,4 @@
-const UpdatableItem = require("./UpdatableItem");
+import UpdatableItem from "./UpdatableItem";
 
 class Sulfuras extends UpdatableItem {
     constructor(item) {
@@ -9,4 +9,4 @@ class Sulfuras extends UpdatableItem {
     }
 }
 
-module.exports = Sulfuras;
+export default Sulfuras;

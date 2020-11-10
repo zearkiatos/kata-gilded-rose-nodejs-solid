@@ -1,4 +1,4 @@
-const UpdatableItem = require("./UpdatableItem");
+import UpdatableItem from './UpdatableItem';
 
 class BackstagePasses extends UpdatableItem {
     initialization() {
@@ -31,4 +31,4 @@ class BackstagePasses extends UpdatableItem {
     }
 }
 
-module.exports = BackstagePasses;
+export default BackstagePasses;
