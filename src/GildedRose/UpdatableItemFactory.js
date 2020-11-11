@@ -4,14 +4,15 @@ import StandardItem from "./StandardItem";
 import Sulfuras from "./Sulfuras";
 
 class UpdatableItemFactory {
-    static initialization() {
+    initialization() {
         this.AGED_BRIE = "Aged Brie";
         this.BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert";
         this.SULFURAS = "Sulfuras, Hand of Ragnaros";
     }
-    static constructor(item) {
-        
+    constructor() {
         this.initialization();
+    }
+    getBusinessLogic(item) {
         switch(item.name) {
             case this.AGED_BRIE:
                 return new AgedBrie(item);
@@ -20,7 +21,7 @@ class UpdatableItemFactory {
             case this.SULFURAS:
                 return new Sulfuras(item);
             default:
-                return new StandardItem(item);
+                return new StandardItem(item)
         }
     }
 }

@@ -14,7 +14,7 @@ class StandardItem extends UpdatableItem {
         this.decreaseSellIn();
         this.decreaseQuality();
 
-        if(this.sellIn() < this.DOUBLE_QUALITY_DECREASE_SELL_IN_THRESHOLD) {
+        if(this.sellIn < this.DOUBLE_QUALITY_DECREASE_SELL_IN_THRESHOLD) {
             this.decreaseQuality();
         }
     }

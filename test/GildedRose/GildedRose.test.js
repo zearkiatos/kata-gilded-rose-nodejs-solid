@@ -1,8 +1,7 @@
 /* eslint-disable no-undef */
 import Item from '../../src/GildedRose/Item';
 import GildedRose from '../../src/GildedRose/GildedRose';
-const GildedRose = require('../../src/GildedRose/GildedRose');
-const UpdatableItemFactory = require('../../src/GildedRose/UpdatableItemFactory');
+import UpdatableItemFactory from '../../src/GildedRose/UpdatableItemFactory';
 
 describe('Test suite for GildedRose', () => {
 
@@ -13,7 +12,8 @@ describe('Test suite for GildedRose', () => {
     }
     test('Should test that sell in value is decreased', () => {
         const whateverItem = new Item('whatever', 10, 0);
-        const updatableItem = UpdatableItemFactory(whateverItem);
+        const updatableItemFactory = new UpdatableItemFactory();
+        const updatableItem = updatableItemFactory.getBusinessLogic(whateverItem)
 
         const gildedRose = new GildedRose();
         gildedRose.updateQuality(listOf(updatableItem));

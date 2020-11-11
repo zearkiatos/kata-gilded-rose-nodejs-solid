@@ -1,6 +1,8 @@
-const Item = require('../../src/GildedRose/Item');
-const GildedRose = require('../../src/GildedRose/GildedRose');
-const UpdatableItemFactory = require('../../src/GildedRose/UpdatableItemFactory');
+
+import Item from '../../src/GildedRose/Item';
+import GildedRose from '../../src/GildedRose/GildedRose';
+import UpdatableItemFactory from '../../src/GildedRose/UpdatableItemFactory';
+
 class GildedRoseCliEntryPoint {
     main(args) {
         console.log('OMGAI!');
@@ -37,4 +39,4 @@ class GildedRoseCliEntryPoint {
     }
 }
 
-module.exports = GildedRoseCliEntryPoint;
+export default GildedRoseCliEntryPoint;
