@@ -15,7 +15,7 @@ class AgedBrie extends UpdatableItem {
 
         this.increaseQuality();
 
-        if(this.sellIn() < this.DOUBLE_QUALITY_DECREMENT_SELL_IN_THRESHOLD) {
+        if(super.sellIn() < this.DOUBLE_QUALITY_DECREMENT_SELL_IN_THRESHOLD) {
             this.increaseQuality();
         }
 

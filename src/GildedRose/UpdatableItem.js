@@ -1,10 +1,5 @@
 import Item from './Item';
 class UpdatableItem extends Item {
-  initialization() {
-    this.MAX_QUALITY = 50;
-    this.MIN_QUALITY = 0;
-    this.item = new Item();
-  }
 
   constructor(item) {
         
@@ -14,7 +9,8 @@ class UpdatableItem extends Item {
       throw new Error("Object of Abstract Class cannot be created");
     }
 
-    this.initialization();
+    this.MAX_QUALITY = 50;
+    this.MIN_QUALITY = 0;
     this.item = item;
   }
 
@@ -31,19 +27,19 @@ class UpdatableItem extends Item {
   }
 
   increaseQuality() {
-    if (this.item.quality < UpdatableItem.MAX_QUALITY) {
+    if (this.item.quality < this.MAX_QUALITY) {
       this.item.quality += 1;
     }
   }
 
   decreaseQuality() {
-    if (this.item.quality > UpdatableItem.MIN_QUALITY) {
-      this.item -= 1;
+    if (this.item.quality > this.MIN_QUALITY) {
+      this.item.quality -= 1;
     }
   }
 
   resetQuality() {
-    this.item = 0;
+    this.item.quality = 0;
   }
 }
 

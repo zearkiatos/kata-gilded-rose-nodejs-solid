@@ -17,15 +17,15 @@ class BackstagePasses extends UpdatableItem {
 
         this.increaseQuality();
 
-        if(this.sellIn() < this.DOUBLE_QUALITY_INCREASE_SELL_IN_THRESHOLD) {
+        if(super.sellIn() < this.DOUBLE_QUALITY_INCREASE_SELL_IN_THRESHOLD) {
             this.increaseQuality();
         }
 
-        if(this.sellIn() < this.TRIPLE_QUALITY_INCREASE_SELL_IN_THRESHOLD) {
+        if(super.sellIn() < this.TRIPLE_QUALITY_INCREASE_SELL_IN_THRESHOLD) {
             this.increaseQuality();
         }
 
-        if(this.sellIn() < this.QUALITY_RESET_SELL_IN_THRESHOLD) {
+        if(super.sellIn() < this.QUALITY_RESET_SELL_IN_THRESHOLD) {
             this.resetQuality();
         }
     }
