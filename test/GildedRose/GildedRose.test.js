@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
-import Item from '../../src/GildedRose/Item';
+import ItemFactory from '../../src/GildedRose/ItemFactory';
 import GildedRose from '../../src/GildedRose/GildedRose';
-import UpdatableItemFactory from '../../src/GildedRose/UpdatableItemFactory';
+import ItemSellIn from '../../src/GildedRose/ItemSellIn';
 
 describe('Test suite for GildedRose', () => {
 
@@ -11,29 +11,28 @@ describe('Test suite for GildedRose', () => {
         return updatableItem
     }
     test('Should test that sell in value is decreased', () => {
-        const whateverItem = new Item('whatever', 10, 0);
-        const updatableItemFactory = new UpdatableItemFactory();
-        const updatableItem = updatableItemFactory.getBusinessLogic(whateverItem);
+        const whateverItem = ItemFactory.basedOn('whatever', 10, 0);
 
         const gildedRose = new GildedRose();
-        gildedRose.updateQuality(listOf(updatableItem));
+        gildedRose.updateQuality(listOf(whateverItem));
 
-        expect(whateverItem.sellIn).toBe(9);
+        const expectedSellIn = new ItemSellIn(9);
+        expect(expectedSellIn.value).toBe(whateverItem.sellIn.value);
     });
 
     test('Should test that quality value is decreased', () => {
-        const whateverItem = new Item('whatever', 1, 10);
-        const updatableItemFactory = new UpdatableItemFactory();
-        const updatableItem = updatableItemFactory.getBusinessLogic(whateverItem);
+        const whateverItem = ItemFactory.basedOn('whatever', 1, 10);
         
         const gildedRose = new GildedRose();
-        gildedRose.updateQuality(listOf(updatableItem));
+        gildedRose.updateQuality(listOf(whateverItem));
 
-        expect(whateverItem.quality).toBe(9);
+
+        const expectedQuality = new ItemSellIn(9);
+        expect(expectedQuality.value).toBe(whateverItem.quality.value);
     });
 
     test('Should test that quality decreases twice as much when sell by is passed', () => {
-        const whateverItem = new Item('whatever', 0, 10);
+        const whateverItem = new ItemFactory.basedOn('whatever', 0, 10);
         const updatableItemFactory = new UpdatableItemFactory();
         const updatableItem = updatableItemFactory.getBusinessLogic(whateverItem);
 
