@@ -8,6 +8,7 @@ class ItemName {
     }
 
     constructor(value) {
+        this.initialization();
         this.value = value;
     }
 
