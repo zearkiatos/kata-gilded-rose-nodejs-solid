@@ -1,12 +1,12 @@
-import UpdatableItem from "./UpdatableItem";
+import Item from "./Item";
 
-class StandardItem extends UpdatableItem {
+class StandardItem extends Item {
     initialization() {
         this.DOUBLE_QUALITY_DECREASE_SELL_IN_THRESHOLD = 0;
     }
 
-    constructor(item) {
-        super(item);
+    constructor(name, sellIn, quality) {
+        super(name, sellIn, quality);
         this.initialization();
     }
 
@@ -14,7 +14,7 @@ class StandardItem extends UpdatableItem {
         this.decreaseSellIn();
         this.decreaseQuality();
 
-        if(super.sellIn() < this.DOUBLE_QUALITY_DECREASE_SELL_IN_THRESHOLD) {
+        if(super.hasToBeSoldInLessThan(this.DOUBLE_QUALITY_DECREASE_SELL_IN_THRESHOLD)) {
             this.decreaseQuality();
         }
     }

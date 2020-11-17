@@ -1,8 +1,8 @@
-import UpdatableItem from "./UpdatableItem";
+import Item from "./Item";
 
-class Sulfuras extends UpdatableItem {
-    constructor(item) {
-        super(item);
+class Sulfuras extends Item {
+    constructor(name, sellIn, quality) {
+        super(name, sellIn, quality);
     }
 
     update() {
